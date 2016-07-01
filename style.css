@@ -1,0 +1,55 @@
+h1 {
+	/*border: 1px solid yellow;*/
+	font-family: 'Lato', sans-serif;
+	font-size: 22px;
+	display: inline;
+	float: top left;
+}
+h2 {
+	font-family: 'Lato', sans-serif;
+	font-style: light-300;
+	font-size: 14px;
+	color: black;
+	padding-top: 20;
+}
+h3 {
+	font-family: 'Lato', sans-serif;
+	font-style: light-300;
+	font-size: 12px;
+	color: black;
+	padding-top: 20;
+}
+body {
+	font-family: 'Lato', sans-serif;
+	font-style: light-300;
+	color: black;
+}
+ul {
+	border: 1px solid white;
+	min-width: 100px;
+	/*width: auto;  size the block automatically */
+}
+li {
+	border: 1px solid white;
+    display: inline;
+	list-style-type: none;
+	white-space: nowrap; /* prevent word wrap */
+}
+p {
+	font-family: 'Lato', sans-serif;
+	font-style: light-300;
+	font-size: 14px;
+	color: black;
+	line-height: 21px; /* sets ht of lines w/out adjusting font size. can be a number (which is a multiple, so "2" is 2x font size), a length, a percentage, or normal */
+	/*text-align: left; /* left, right, center, or justify */
+}
+.hide {
+	display: none;
+}
+a {
+	color: navy;
+	text-decoration: none;
+	font-family: 'Lato', sans-serif;
+	font-style: light-300;
+	font-size: 12px;
+}

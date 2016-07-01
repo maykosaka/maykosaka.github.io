@@ -1,9 +1,52 @@
-<html>
+<!DOCTYPE html>
 <head>
-	<title></title>
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>test site from github</h1>
+  <h1>MOVIE TRACKER</h1>
+  <p>Enter a movie, click movie image to add to Faves</p>
+  <form action="" id="movie-form">
+  <input type="text" id="movie">
+  <button>Search</button>
+  </form>
+
+  <button id="faves-button">Favorites</button>
+
+  <script id="list-template" type="text/x-handlebars-template">
+    <li data-id={{id}}>{{movieName}}</li>
+    <li>
+      <img class="movie-image" src="{{image}}" alt="{{title}}">
+      <h2>{{title}}</h2>
+      <h3>Year: {{year}}</h3>
+      <h3>Type: {{type}}</h3>
+      <a href="http://www.imdb.com/find?ref_=nv_sr_fn&q={{imdb}}&s=all">IMDB info</a>
+    </li>
+    <br></br>
+</script>
+
+  <ul id="search-results"></ul>
+
+
+<script id="faves-template" type="text/x-handlebars-template">
+    <li data-id={{id}}></li>
+    <li>
+      <img src="{{favesImage}}" alt="{{favesTitle}}">
+      <h2>{{favesTitle}}</h2>
+      <h3>Year: {{favesYear}}</h3>
+      <h3>Type: {{favesType}}</h3>
+      <h3>Watched</h3>
+    </li>
+    <br></br>
+</script>
+
+  <div id="faves">
+  <p>FAVORITES</p>
+  <ul id="faves-list"></ul>
+  </div>
 
 </body>
 </html>
