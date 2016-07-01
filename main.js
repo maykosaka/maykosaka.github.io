@@ -34,7 +34,7 @@ $(document).ready(function() {
     $("#faves").addClass('hide')
 
     // AJAX call to get movie info from OMDB, dynamically append to DOM
-    var omdbUrl = 'http://www.omdbapi.com/?s=';
+    var omdbUrl = 'https://www.omdbapi.com/?s=';
     $.ajax({
       url: omdbUrl + movie,
       type: 'GET',
@@ -49,7 +49,7 @@ $(document).ready(function() {
             for(var i = 0; i < movieObject.Search.length; i++) {
               // define data object
               var context = {
-                image: "http://img.omdbapi.com/?i=" + movieObject.Search[i].imdbID + "&apikey=7fe29f8b",
+                image: "https://img.omdbapi.com/?i=" + movieObject.Search[i].imdbID + "&apikey=7fe29f8b",
                 title: movieObject.Search[i].Title,
                 year: movieObject.Search[i].Year,
                 type: movieObject.Search[i].Type,
