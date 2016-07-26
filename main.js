@@ -1,7 +1,7 @@
 /*  MOVIE TRACKER APP
 
 * API Call: user enters movie name, hit Submit AJAX call to omdb endpoint with movie name dynamically added on
-* Create: when user clicks movie image of a movie from the selection, saves it to Database. (later) Heart icon next to each movie
+* Create: when user clicks a movie image from the selection, saves it to Database. (later) Heart icon next to each movie
 * Read: Faves page show all Faves/Hearted & shows if they’re watched.
 * Update: click Watched on a movie of Faves page, adds Watched value to that movie in Database
 * Delete: when user clicks a movie on Faves page, movie gets deleted from Database
@@ -24,7 +24,6 @@ $(document).ready(function() {
   $('#movie-form').submit(function(event) {
     // prevents page refresh
     event.preventDefault();
-    $('#search-results').empty();
 
     // grab user input, clear input field, clear DOM of previous search results
     var movie = $('#movie').val().trim();
@@ -84,13 +83,11 @@ $(document).ready(function() {
         else {
           alert("Sorry, " + movie + " doesn't exist in our database. Please try another movie.");
         }
-      } // end of success function
-
-      //something's wrong w my ajax erorr msg
-      /*error: function(movieObject) {
+      }, // end of success function
+      error: function(movieObject) {
         console.log(movieObject);
         alert('Sorry, our database seems to be down. Please try again later.')
-      }*/
+      }
     }); // end of ajax call
   }); // end of Submit function
 
@@ -136,7 +133,20 @@ $(document).ready(function() {
 
           })
         })
-    })
-  })
+
+        // UPDATE functionality: click “Not watched” of a movie on Faves page, add the movie to Watched list in DB
+        $('.watched-status').click(function() {
+          console.log('watched status been clicked');
+          //this.html("<h3>Watched</h3>");   //need this to work so that it changes particular movie, not all movies in faves
+          $('.watched-status').html("<h3>Watched</h3>");  // changed in DOM, need to change in DB
+        })
+
+        // DELETE functionality: click Remove to delete movie from Faves list
+        $('.remove').click(function() {
+          console.log('remove been clicked');
+        })
+
+      })
+  }) // end of Faves button click
 
 });
