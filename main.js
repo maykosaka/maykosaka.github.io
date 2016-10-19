@@ -94,6 +94,7 @@ $(document).ready(function() {
 
 
   // READ functionality: click Favorites button to show Favorites list
+  // add “Not yet watched” & Delete status to DB Faves list
   // grab <li> Handlebars template & compile
   var sourceFavesTemplate = $('#faves-template').html();
   var favesTemplate = Handlebars.compile(sourceFavesTemplate);
@@ -134,16 +135,16 @@ $(document).ready(function() {
           })
         })
 
-        // UPDATE functionality: click “Not watched” of a movie on Faves page, add the movie to Watched list in DB
+        // UPDATE functionality: click “Not yet watched” of a movie on Faves page, change Not Watched in DB Faves list to Watched
         $('.watched-status').click(function() {
-          console.log('watched status been clicked');
+          console.log('Watched status has been clicked');
           //this.html("<h3>Watched</h3>");   //need this to work so that it changes particular movie, not all movies in faves
           $('.watched-status').html("<h3>Watched</h3>");  // changed in DOM, need to change in DB
         })
 
-        // DELETE functionality: click Remove to delete movie from Faves list
+        // DELETE functionality: click Remove to delete movie from Faves list in DB + DOM.
         $('.remove').click(function() {
-          console.log('remove been clicked');
+          console.log('Remove has been clicked');
         })
 
       })
